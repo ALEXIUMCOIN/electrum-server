@@ -100,7 +100,7 @@ our ~/bin directory:
 
     # apt-get install make g++ python-leveldb libboost-all-dev libssl-dev libdb++-dev pkg-config libminiupnpc-dev git
     # su - novacoin
-    $ cd ~/src && git clone https://github.com/nova-project/novacoin.git
+    $ cd ~/src && git clone https://github.com/novacoin-project/novacoin.git
     $ cd novacoin/src
     $ make -f makefile.unix
     $ strip novacoind
