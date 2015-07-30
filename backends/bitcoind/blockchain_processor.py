@@ -627,10 +627,11 @@ class BlockchainProcessor(Processor):
             self.up_to_date = False
             try:
                 next_block = self.bitcoind('getblockbynumber', [self.storage.height + 1, True])
-                next_block_hash = next_block.get('hash')
             except BaseException, e:
+                next_block = self.bitcoind('getblock', [self.storage.last_hash, True])
                 revert = True
-                next_block = next_block.get(self.storage.last_hash)
+
+            next_block_hash = next_block.get('hash')
 
             self.mtime('daemon')
 
